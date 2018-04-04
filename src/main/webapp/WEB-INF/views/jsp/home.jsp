@@ -15,13 +15,13 @@
 <body>
     <div>
         <div>
-            <h4>Select any of the options below to send sample email:</h4>
+            <h4>Click below button to compose email:</h4>
             <form method="get" style="width: 200px;">
                 <fieldset style="border: none; padding-left: 0px; padding-top: 0px">
                     <table>
                         <tr>
                             <td>
-                                <input type="submit" formaction="api/mail" value="Compose Email">
+                                <input type="submit" formaction="/send/mail" value="Compose Email">
                             </td>
                         </tr>
                     </table>

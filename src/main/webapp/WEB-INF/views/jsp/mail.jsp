@@ -11,18 +11,28 @@
             <fieldset>
                 <div style="float:left;">
                     <table>
+                         <tr>
+                            <th><label for="input_from">From: </label></th>
+                            <td><form:input path="from" id="input_from" disabled="true" type="email" value="dhaneshkhot1@gmail.com"/>
+                                <form:errors path="from" cssStyle="color:red;font-size:small"/>
+                            </td>
+                        </tr>
                         <tr>
-                            <th><label for="input_to">To</label></th>
+                            <th><label for="input_to">To: </label></th>
                             <td><form:input path="to" id="input_to" type="email"/>
-                                <small>Enter email address</small><br/>
                                 <form:errors path="to" cssStyle="color:red;font-size:small"/>
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="input_subject">Subject</label></th>
+                            <th><label for="input_subject">Subject: </label></th>
                             <td><form:input path="subject" id="input_subject"/>
-                                <small>Enter the subject</small><br/>
                                 <form:errors path="subject" cssStyle="color:red;font-size:small"/>
+                            </td>
+                        </tr>
+   						<tr>
+                            <th><label for="input_message">Message: </label></th>
+                            <td><form:textarea path="content" id="input_message"/>
+                                <form:errors path="content" cssStyle="color:red;font-size:small"/>
                             </td>
                         </tr>
                         <tr>

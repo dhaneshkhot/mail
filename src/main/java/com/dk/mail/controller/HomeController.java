@@ -12,4 +12,5 @@ public class HomeController {
         model.addAttribute("pageTitle","Welcome to Application");
         return "home";
     }
+
 }
