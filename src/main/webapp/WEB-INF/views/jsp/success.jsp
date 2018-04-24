@@ -3,18 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Home Page</title>
+    <title>Success Page</title>
 </head>
 <body>
     <div>
         <div>
-            <h4>Click below button to compose email:</h4>
+            <h2>Email Sent Successfully!</h2>
             <form method="get" style="width: 200px;">
                 <fieldset style="border: none; padding-left: 0px; padding-top: 0px">
                     <table>
                         <tr>
                             <td>
-                                <input type="submit" formaction="/send/mail" value="Compose Email">
+                                <input type="submit" formaction="/" value="Go Back To Home">
                             </td>
                         </tr>
                     </table>

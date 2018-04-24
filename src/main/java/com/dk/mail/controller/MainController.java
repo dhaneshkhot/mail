@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,13 +35,13 @@ public class MainController {
         return "mail";
     }
     
-    @RequestMapping(value = "/send/mail", method = RequestMethod.POST)
-    public ResponseEntity<?> compose(@RequestBody Mail mail, UriComponentsBuilder ucBuilder) {
+    @RequestMapping(value = "/send/mail", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    public String compose(Mail mail, UriComponentsBuilder ucBuilder) {
         logger.info("Sending email : {}", mail);
         mailService.sendSimpleMessage(mail);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(ucBuilder.path("/send/mail").build().toUri());
-        return new ResponseEntity<String>(headers, HttpStatus.CREATED);
+        return "success";
     }
     
 }
