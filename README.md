@@ -1,9 +1,11 @@
-This is Maven Spring Boot project to implement simple send mail functionality.
+This is Maven Spring Boot project to implement simple send mail functionality and save the sent emails to mysql database.
 
 Assumptions:
 1. Java 1.8, Eclipse, Mysql (with user and password as 'root') installed on machine. 
-2. Only mail sending functionality with gmail smtp and save sent mails in mysql database.
-3. A simple UI to send the email and view the sent emails.
+2. Gmail credentials are set in /resources/application.properties
+3. mail.sentmails tables is created in mysql with columns id (varchar(255)), mailfrom (varchar(255)), mailto (varchar(255)), mailsubject (varchar(1000)), and content (varchar(4000)).
+4. Only a simple UI to send the email and mail sending REST service with gmail smtp to implelement.
+
 
 Steps:
 1. Clone the project and resolve the dependencies
