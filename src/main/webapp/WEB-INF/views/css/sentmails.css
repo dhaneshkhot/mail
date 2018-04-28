@@ -1,0 +1,22 @@
+#sentmails_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#sentmails_table th {
+    height: 30px;
+    text-align: center;    
+}
+
+#sentmails_table, th, td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	margin: 10px;
+}

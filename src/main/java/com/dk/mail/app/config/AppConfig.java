@@ -3,7 +3,9 @@ package com.dk.mail.app.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -12,6 +14,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 @ComponentScan("com.dk.mail")
 @EnableWebMvc
+@EnableTransactionManagement
+@EnableJpaRepositories
 public abstract class AppConfig implements WebMvcConfigurer {
 
     @Override

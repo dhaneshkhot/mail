@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Success Page</title>
+    <title>Error Page</title>
 </head>
 <body>
     <div>
         <div>
-            <h2>Email Sent ${to} Successfully!</h2>
+            <h2>Something is wrong! Please try again after some time.</h2>
             <form method="get" style="width: 200px;">
                 <fieldset style="border: none; padding-left: 0px; padding-top: 0px">
                     <table>

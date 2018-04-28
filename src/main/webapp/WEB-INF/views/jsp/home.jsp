@@ -17,7 +17,6 @@
                              	<input type="submit" formaction="/send/mail" value="Compose Email">
                         	</td>
                         </tr>
-                        <br>
                         <tr>
                         	<td>
                              	<input type="submit" formaction="/sentmails" value="Sent Mails">

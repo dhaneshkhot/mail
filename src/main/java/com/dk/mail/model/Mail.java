@@ -1,41 +1,30 @@
 package com.dk.mail.model;
 
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "sentmails")
-@EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, 
-        allowGetters = true)
 public class Mail{
 	
 
     @Id
-    @GeneratedValue
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    @Column(name = "id", unique = true)
+    private String id;
     
 
-    @Column(name = "from")
+    @Column(name = "mailfrom")
     private String from;
-    @Column(name = "to")
+    @Column(name = "mailto")
     private String to;
-    @Column(name = "subject")
+    @Column(name = "mailsubject")
     private String subject;
     @Column(name = "content")
     private String content;
@@ -50,7 +39,7 @@ public class Mail{
         this.content = content;
     }
 
-    public Mail(Long id, String to, String from, String subject, String content) {
+    public Mail(String id, String to, String from, String subject, String content) {
     	this.id = id;
         this.from = from;
         this.to = to;
@@ -58,11 +47,11 @@ public class Mail{
         this.content = content;
     }
     
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     

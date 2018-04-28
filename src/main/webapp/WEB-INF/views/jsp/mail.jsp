@@ -13,7 +13,7 @@
                     <table>
                          <tr>
                             <th><label for="input_from">From: </label></th>
-                            <td><form:input path="from" id="input_from" type="email" value="dhaneshkhot1@gmail.com"/>
+                            <td><form:input path="from" id="input_from" type="email" readonly="true" value="dhaneshkhot1@gmail.com"/>
                                 <form:errors path="from" cssStyle="color:red;font-size:small"/>
                             </td>
                         </tr>

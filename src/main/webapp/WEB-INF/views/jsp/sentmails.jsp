@@ -4,42 +4,41 @@
 <html>
 <head>
     <title>Home Page</title>
+    <style>
+		<%@include file="../css/sentmails.css"%>
+	</style>
 </head>
 <body>
     <div>
         <div>
             <h4>Click below button to compose email:</h4>
-            <form method="get" style="width: 200px;">
+            <form method="get" style="width: 100%;">
                 <fieldset style="border: none; padding-left: 0px; padding-top: 0px">
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="submit" formaction="/send/mail" value="Compose Email">
-                            </td>
-                        </tr>
-                        <tr>
-	                        <td>
-	                 			<input type="submit" formaction="/" value="Back To Home">
-	           				</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li>                   
+                            <input type="submit" formaction="/send/mail" value="Compose Email">
+                        </li>
+                        <li>                       
+                 			<input type="submit" formaction="/" value="Back To Home">
+                        </li>
+                    </ul>
                 </fieldset>
             </form>
-
-            <h3>Sent Mails:</h3>
+            <h2>Sent Mails:</h2>
+            <table id="sentmails_table">
             <tr>
            		<th>TO</th>
 		        <th>SUBJECT</th> 
 		        <th>MESSAGE</th> 
            	</tr>
-           	<br>
             <c:forEach items="${sentmails}" var="sentmail">
 			    <tr>
 			        <td><c:out value="${sentmail.to}"/></td>
 			        <td><c:out value="${sentmail.subject}"/></td> 
-			        <td><c:out value="${sentmail.content}"/></td>  
+			        <td><c:out value="${sentmail.content}"/></td> 
 			    </tr>
 			</c:forEach>
+			</table>
         </div>
     </div>
 </body>
